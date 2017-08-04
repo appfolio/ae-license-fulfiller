@@ -1,0 +1,20 @@
+{
+  "name": "license-fulfiller",
+  "version": "0.0.1",
+  "description": "A function to help with fulfilling license agreements of node modules",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appfolio/ae-license-fulfiller.git"
+  },
+  "author": "AppFolio, Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "license-checker": "^13.0.2",
+    "spdx-license-list": "^3.0.1",
+    "spdx-satisfies": "^0.1.3"
+  }
+}
