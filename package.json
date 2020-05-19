@@ -1,5 +1,5 @@
 {
-  "name": "license-fulfiller",
+  "name": "@appfolio/license-fulfiller",
   "version": "0.0.1",
   "description": "A function to help with fulfilling license agreements of node modules",
   "main": "src/index.js",
