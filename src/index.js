@@ -1,13 +1,24 @@
 const path = require('path')
     , checker = require('license-checker')
     , satisfies = require('spdx-satisfies')
-    , licenseList = require('spdx-license-list/full');
+    , defaultLicenseTexts = require('spdx-license-list/full');
 
 function fulfill(config = {}) {
   return new Promise((resolve, reject) => {
-    const { overrides, agreedLicenses, startPath, acceptableLicenseFiles, ignorePackages = [] } = config;
-    const defaultLicenseTexts = licenseList;
-    checker.init({ customFormat: {}, start: startPath }, function(err, packages) {
+    const {
+      acceptableLicenseFiles,
+      agreedLicenses,
+      customFormat = {
+        licenseText: '',
+      },
+      ignorePackages = [],
+      overrides,
+      production,
+      startPath = [],
+      unknown,
+    } = config;
+
+    checker.init({ customFormat, production, start: startPath, unknown }, function(err, packages) {
       if (err) {
         reject(err);
         return;
@@ -20,7 +31,7 @@ function fulfill(config = {}) {
 
         Object.assign(curPackage, overrides[key]);
 
-        if (typeof curPackage.licenses !== 'string') {
+        if (typeof curPackage.licenses !== 'string' || curPackage.licenses === 'UNKNOWN') {
           curPackage.agreedLicense = null;
           return;
         }

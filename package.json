@@ -1,5 +1,5 @@
 {
-  "name": "license-fulfiller",
+  "name": "@appfolio/license-fulfiller",
   "version": "0.0.1",
   "description": "A function to help with fulfilling license agreements of node modules",
   "main": "src/index.js",
@@ -13,8 +13,8 @@
   "author": "AppFolio, Inc.",
   "license": "MIT",
   "dependencies": {
-    "license-checker": "^13.0.2",
-    "spdx-license-list": "^3.0.1",
-    "spdx-satisfies": "^0.1.3"
+    "license-checker": "^25.0.1",
+    "spdx-license-list": "^6.1.0",
+    "spdx-satisfies": "^5.0.0"
   }
 }
